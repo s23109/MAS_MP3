@@ -1,5 +1,4 @@
 package Wielodziedziczenie;
 
-public class Klient {
-
+public class Klient_Firma {
 }
