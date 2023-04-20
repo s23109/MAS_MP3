@@ -13,6 +13,13 @@ public class Klient_Indywidualny extends Uzytkownik_systemu implements IKlient{
         this.hasKlientAttached = true;
     }
 
+    public Klient_Indywidualny(String email, String adress, String name, String nrPesel, Klient klient){
+        super(email, adress, name);
+        this.nrPesel = nrPesel;
+        this.klientinfo = klient;
+        this.hasKlientAttached = true;
+    }
+
     @Override
     public String getClientOpinon() {
         return klientinfo.clientOpinion;

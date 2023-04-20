@@ -54,14 +54,20 @@ public class Main {
         try {
             klientFirma = new Klient_Firma("ss@ss.s", "adress", "Firmm", "123", "aaa", 123);
 
-            System.out.print(klientFirma.getClientPurchases());
+            System.out.println(klientFirma.getClientPurchases());
             Klient klient =  Klient.createKlient("asd",252,klientFirma);
 
-            System.out.print(klientFirma.getClientPurchases());
+            System.out.println(klientFirma.getClientPurchases());
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
+
+        System.out.println("==================================");
+
+        System.out.println("Wieloaspektowe");
+
+
 
     }
 }
