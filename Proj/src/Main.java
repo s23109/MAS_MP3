@@ -1,6 +1,8 @@
 import Abstrakcyjna_Polimorficzne_Metody.*;
 import Overlapping.Konto;
 import Overlapping.Typ_Konta;
+import Wielodziedziczenie.Klient;
+import Wielodziedziczenie.Klient_Firma;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,20 @@ public class Main {
 
         System.out.println("Wielodziedziczenie");
 
+        Klient_Firma klientFirma = null;
 
+
+        try {
+            klientFirma = new Klient_Firma("ss@ss.s", "adress", "Firmm", "123", "aaa", 123);
+
+            System.out.print(klientFirma.getClientPurchases());
+            Klient klient =  Klient.createKlient("asd",252,klientFirma);
+
+            System.out.print(klientFirma.getClientPurchases());
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

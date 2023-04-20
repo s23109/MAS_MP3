@@ -8,4 +8,6 @@ public interface IUzytkownik_systemu {
 
     public String getClientName();
 
+    public boolean hasClientAttached();
+
 }
