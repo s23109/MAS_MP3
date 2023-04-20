@@ -50,5 +50,10 @@ public abstract class Samochód {
         return null;
     }
 
-
+    public Typ_Paliwa getTypPaliwa () throws Exception {
+        if (this.typPaliwa == null){
+            throw new Exception("Samochód nie ma przypisanego typu paliwa");
+        }
+        return  this.typPaliwa;
+    }
 }

@@ -1,4 +1,7 @@
 import Abstrakcyjna_Polimorficzne_Metody.*;
+import Dynamic.Bezrobotny;
+import Dynamic.Osoba;
+import Dynamic.Zatrudniony;
 import Overlapping.Konto;
 import Overlapping.Typ_Konta;
 import Wieloaspektowe.Samochód_Ciężarowy;
@@ -81,6 +84,29 @@ public class Main {
         }
 
         System.out.println(samochódOsobowy.getBasicInfo());
+
+        System.out.println("==================================");
+
+        System.out.println("Dynamiczne");
+
+        Osoba bezrobotny = new Bezrobotny("Imie","Nazw","Pow_Zwol");
+
+        System.out.println(bezrobotny);
+        System.out.println(bezrobotny.getClass());
+
+        bezrobotny = new Zatrudniony((Bezrobotny)bezrobotny,123);
+
+        System.out.println(bezrobotny);
+        System.out.println(bezrobotny.getClass());
+
+        bezrobotny = new Bezrobotny((Zatrudniony) bezrobotny, "ASD");
+
+        System.out.println(bezrobotny);
+        System.out.println(bezrobotny.getClass());
+
+
+
+
 
     }
 }
