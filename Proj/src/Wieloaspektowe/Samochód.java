@@ -19,6 +19,33 @@ public abstract class Samochód {
         typPaliwa.samochód = this;
     }
 
+    public Samochód(String nazwa, int iloscMiejscSiedzacych) {
+        this.nazwa = nazwa;
+        this.iloscMiejscSiedzacych = iloscMiejscSiedzacych;
+
+    }
+
+    public void CreateTypPaliwa_Spalinowy(String nazwa_Paliwa, double spalanieNaSto, double pojemnosc) throws Exception {
+        if (this.typPaliwa != null){
+            throw new Exception("Samochód ma już typ paliwa");
+        }
+        Samochód_Spalinowy samochódSpalinowy = Samochód_Spalinowy.CreateSamochódSpalinowy(nazwa_Paliwa,this,spalanieNaSto,pojemnosc);
+
+        this.typPaliwa = samochódSpalinowy;
+
+    }
+
+    public void CreateTypPaliwa_Elektryczny (String nazwa_Paliwa, double zasieg, String czasLadowaniaWGodzinach) throws Exception {
+        if (this.typPaliwa != null){
+            throw new Exception("Samochód ma już typ paliwa");
+        }
+        Samochód_Elektryczny samochódElektryczny = Samochód_Elektryczny.CreateSamochódElektryczny(nazwa_Paliwa,this,zasieg,czasLadowaniaWGodzinach);
+
+        this.typPaliwa = samochódElektryczny;
+
+    }
+
+
     public String getBasicInfo(){
         return null;
     }
