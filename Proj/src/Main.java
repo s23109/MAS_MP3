@@ -1,6 +1,9 @@
 import Abstrakcyjna_Polimorficzne_Metody.*;
 import Overlapping.Konto;
 import Overlapping.Typ_Konta;
+import Wieloaspektowe.Samochód_Ciężarowy;
+import Wieloaspektowe.Samochód_Elektryczny;
+import Wieloaspektowe.Samochód_Osobowy;
 import Wielodziedziczenie.Klient;
 import Wielodziedziczenie.Klient_Firma;
 
@@ -67,7 +70,17 @@ public class Main {
 
         System.out.println("Wieloaspektowe");
 
+        Samochód_Osobowy samochódOsobowy = new Samochód_Osobowy("OSOB", 3, 120);
 
+        Samochód_Ciężarowy samochódCiężarowy = new Samochód_Ciężarowy("CIEZ" , 2, 7500);
+
+        try {
+            samochódOsobowy.CreateTypPaliwa_Elektryczny("ELEK",123,"Lit-ion");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println(samochódOsobowy.getBasicInfo());
 
     }
 }

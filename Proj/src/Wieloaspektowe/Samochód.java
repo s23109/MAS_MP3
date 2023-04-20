@@ -6,7 +6,7 @@ public abstract class Samochód {
 
     int iloscMiejscSiedzacych;
 
-    public Typ_Paliwa typPaliwa;
+    Typ_Paliwa typPaliwa;
 
     public Samochód(String nazwa, int iloscMiejscSiedzacych, Typ_Paliwa typPaliwa) throws Exception {
         if (typPaliwa.samochód != null){
@@ -35,11 +35,11 @@ public abstract class Samochód {
 
     }
 
-    public void CreateTypPaliwa_Elektryczny (String nazwa_Paliwa, double zasieg, String czasLadowaniaWGodzinach) throws Exception {
+    public void CreateTypPaliwa_Elektryczny (String nazwa_Paliwa, double zasieg, String rodzajBaterii) throws Exception {
         if (this.typPaliwa != null){
             throw new Exception("Samochód ma już typ paliwa");
         }
-        Samochód_Elektryczny samochódElektryczny = Samochód_Elektryczny.CreateSamochódElektryczny(nazwa_Paliwa,this,zasieg,czasLadowaniaWGodzinach);
+        Samochód_Elektryczny samochódElektryczny = Samochód_Elektryczny.CreateSamochódElektryczny(nazwa_Paliwa,this,zasieg,rodzajBaterii);
 
         this.typPaliwa = samochódElektryczny;
 
