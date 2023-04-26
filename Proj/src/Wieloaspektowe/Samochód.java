@@ -19,11 +19,23 @@ public abstract class Samochód {
         typPaliwa.samochód = this;
     }
 
-    public Samochód(String nazwa, int iloscMiejscSiedzacych) {
+    public Samochód(String nazwa, int iloscMiejscSiedzacych, Typ_Paliwa_Enum typPaliwaEnum, Object param1, Object param2, Object param3) throws Exception {
         this.nazwa = nazwa;
         this.iloscMiejscSiedzacych = iloscMiejscSiedzacych;
 
+        if (typPaliwaEnum.equals(Typ_Paliwa_Enum.Elektryczny)){
+            this.CreateTypPaliwa_Elektryczny((String) param1, (Double) param2, (String) param3);
+        } else if (typPaliwaEnum.equals(Typ_Paliwa_Enum.Spalinowy)) {
+            this.CreateTypPaliwa_Spalinowy((String) param1, (Double) param2, (Double) param3);
+        } else {
+            throw  new Exception("Zły typ paliwa");
+        }
+
+
+
     }
+
+
 
     public void CreateTypPaliwa_Spalinowy(String nazwa_Paliwa, double spalanieNaSto, double pojemnosc) throws Exception {
         if (this.typPaliwa != null){

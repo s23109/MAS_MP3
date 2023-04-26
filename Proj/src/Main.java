@@ -7,6 +7,7 @@ import Overlapping.Typ_Konta;
 import Wieloaspektowe.Samochód_Ciężarowy;
 import Wieloaspektowe.Samochód_Elektryczny;
 import Wieloaspektowe.Samochód_Osobowy;
+import Wieloaspektowe.Typ_Paliwa_Enum;
 import Wielodziedziczenie.Klient;
 import Wielodziedziczenie.Klient_Firma;
 
@@ -19,8 +20,8 @@ public class Main {
 
         System.out.println("ABSTRACT + POLI_METHOD");
 
-        Samolot samolot = new Samolot("PLANE","ASD", 1000.0,1999);
-        Samochód samochód = new Samochód("CAR", "ASD", 12300.0 , 300000f);
+        Pojazd samolot = new Samolot("PLANE","ASD", 1000.0,1999);
+        Pojazd samochód = new Samochód("CAR", "ASD", 12300.0 , 300000f);
 
         //Pojazd pojazd = new Pojazd() ;
 
@@ -73,15 +74,13 @@ public class Main {
 
         System.out.println("Wieloaspektowe");
 
-        Samochód_Osobowy samochódOsobowy = new Samochód_Osobowy("OSOB", 3, 120);
-
-        Samochód_Ciężarowy samochódCiężarowy = new Samochód_Ciężarowy("CIEZ" , 2, 7500);
-
+        Samochód_Osobowy samochódOsobowy = null;
         try {
-            samochódOsobowy.CreateTypPaliwa_Elektryczny("ELEK",123,"Lit-ion");
+            samochódOsobowy = new Samochód_Osobowy("asd",123, Typ_Paliwa_Enum.Spalinowy, "asd",1.0,1.0,123);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
 
         System.out.println(samochódOsobowy.getBasicInfo());
 

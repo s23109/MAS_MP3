@@ -4,10 +4,12 @@ public class Samochód_Osobowy extends Samochód{
 
         int maksymalnaPredkosc ;
 
-    public Samochód_Osobowy(String nazwa, int iloscMiejscSiedzacych, int maksymalnaPredkosc) {
-        super(nazwa, iloscMiejscSiedzacych);
+    public Samochód_Osobowy(String nazwa, int iloscMiejscSiedzacych, Typ_Paliwa_Enum typPaliwaEnum, Object param1, Object param2, Object param3, int maksymalnaPredkosc) throws Exception {
+        super(nazwa, iloscMiejscSiedzacych, typPaliwaEnum, param1, param2, param3);
         this.maksymalnaPredkosc = maksymalnaPredkosc;
     }
+
+
 
     @Override
     public String getBasicInfo() {
