@@ -24,9 +24,19 @@ public abstract class Samochód {
         this.iloscMiejscSiedzacych = iloscMiejscSiedzacych;
 
         if (typPaliwaEnum.equals(Typ_Paliwa_Enum.Elektryczny)){
-            this.CreateTypPaliwa_Elektryczny((String) param1, (Double) param2, (String) param3);
+            if (param1.getClass() == String.class && param2.getClass() == Double.class && param3.getClass() == String.class){
+                this.CreateTypPaliwa_Elektryczny((String) param1, (Double) param2, (String) param3);
+            }else {
+                throw  new Exception("Złe typy danych");
+            }
+
+
         } else if (typPaliwaEnum.equals(Typ_Paliwa_Enum.Spalinowy)) {
-            this.CreateTypPaliwa_Spalinowy((String) param1, (Double) param2, (Double) param3);
+            if (param1.getClass() == String.class && param2.getClass() == Double.class && param3.getClass() == Double.class){
+                this.CreateTypPaliwa_Spalinowy((String) param1, (Double) param2, (Double) param3);
+            }else {
+                throw  new Exception("Złe typy danych");
+            }
         } else {
             throw  new Exception("Zły typ paliwa");
         }
